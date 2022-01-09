@@ -1,0 +1,23 @@
+container{
+   background-color: black;
+   font-family: cursive;
+ }
+#title{
+   text-align:center;
+   color:rgb(228, 0, 0);
+   font-size:80px;
+   padding-top:30vh;
+   animation: glow 1s ease-in-out infinite alternate;
+ }
+
+ @keyframes glow {
+   
+   from {
+     text-shadow: 0 1px 2px #fff, 0 0 10px #fff, 0 0 15px #ddc1c1, 0 0 20px #e42929, 0 0 25px #e60032, 0 0 30px #e6004d, 0 0 35px #d80846;
+   }
+   
+   to {
+     text-shadow: 0 1px 3px #fff, 0 0 15px #fdfdfd, 0 0 20px #d4c3c7, 0 0 25px #dd0042, 0 0 30px #d40935, 0 0 35px #e90000, 0 0 40px #fd1333;
+   }
+} 
+

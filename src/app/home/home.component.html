@@ -1,0 +1,88 @@
+<div id="bodyContainer">
+    <div id="headerContainer-1" *ngIf="show">    
+        <div class="navbar">
+            <a (click)="home()"><b><span id="title">24x7 NEWS</span></b></a>
+            <a (click)="headlines()">Headlines</a>
+            <a (click)="covid()">Covid-19</a>
+            <a (click)="india()">India</a>
+            <div class="dropdown">
+                <button class="dropbtn">Categories 
+                    <fa-icon id="caret" [icon]="caret"></fa-icon>
+                </button>
+                <div  class="dropdown-content">
+                  <a (click)="business()">Business</a>
+                  <a (click)="entertainment()">Entertainment</a>
+                  <a (click)="health()">Health</a>
+                  <a (click)="sports()">Sports</a>
+                  <a (click)="technology()">Technology</a>
+                </div>
+            </div> 
+              <a id="signout" (click)="logout()"><fa-icon  [icon]="signout"></fa-icon></a>
+              <a id="search" (click)="searchData()"><fa-icon  [icon]="search"></fa-icon></a>
+              <input type="search" id="input-search" [(ngModel)]="searching" placeholder="Search..."/>
+        </div>
+    </div>
+    <div id="headerContainer-2" *ngIf="!show">    
+        <div class="sidebar">
+            <a id="menu" (click)="sidebar()"><fa-icon [icon]="menu"></fa-icon></a>
+            <a id="menu" (click)="home()"><b><span id="title-1">24x7 NEWS</span></b></a>
+            <div *ngIf="sidenavbar" class="sidenav">
+                <a id=close (click)="close()"><fa-icon id="closemenu" [icon]="closemenu"></fa-icon></a>
+                <a id="home" (click)="home()"><b><span id="title-1">24x7 NEWS</span></b></a>
+
+                <a id="search" (click)="searchData()"><fa-icon  [icon]="search"></fa-icon></a>
+                <input type="search" [(ngModel)]="searching" id="input-search" placeholder="Search..."/>
+
+                <a id="sidemenu" (click)="headlines()">Headlines</a>
+                <a id="sidemenu" (click)="covid()">Covid-19</a>
+                <a id="sidemenu" (click)="india()">India</a>
+                <button class="dropbtn"  (click)="dropdown()">Categories 
+                    <fa-icon id="caret" [icon]="caret"></fa-icon>
+                  </button>
+                  <div class="dropdown-content" *ngIf="select">
+                    <a id="sidemenu" (click)="business()">Business</a>
+                    <a id="sidemenu" (click)="entertainment()">Entertainment</a>
+                    <a id="sidemenu" (click)="health()">Health</a>
+                    <a id="sidemenu" (click)="sports()">Sports</a>
+                    <a id="sidemenu" (click)="technology()">Technology</a>
+                 </div>
+            </div>
+            <a id="signout" (click)="logout()"><fa-icon  [icon]="signout"></fa-icon></a>
+        </div>
+    </div>
+    <div id="topic">
+        <p id="inner-topic" [innerHTML]="topic"></p>
+        <hr>
+    </div>
+    <div id="newsContainer">
+        <div id="grid">
+            <div class="grid-container" *ngFor="let i of detail | paginate: { itemsPerPage:20, currentPage:page, totalItems:total }">
+                <a id="route-link" href={{i.url}}>
+                    <div class="card">
+                        <div id="news-details">
+                            <div id="wrap">
+                                <img id="news-image" src={{i.image}} alt="news-image" style="width:100%">
+                            </div>    
+                        </div>
+                        <div id="title">
+                            <p><b>{{i.title}}</b><br></p>
+                        </div>
+                        <div>
+                            <p id="publish-date">Date:{{i.publishedAt}}</p>
+                        </div>
+                        <div id="content-container">
+                            <span id="description">
+                                {{i.description}}
+                            </span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div id="paginateContainer">
+         <pagination-controls [maxSize]="maxSize" [autoHide]="autoHide" [responsive]="responsive" previousLabel="Prev" nextLabel="Next"  (pageChange)="page = $event"></pagination-controls>
+    </div>
+   <app-footer></app-footer>
+</div>
+<router-outlet></router-outlet>

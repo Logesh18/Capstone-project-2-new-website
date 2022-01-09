@@ -1,0 +1,12 @@
+<div id="container">
+    <div id="container-content">
+        <h3>Sign Up</h3>
+        <form id="signup" class="form-group" ngNoForm>
+          <input type="text" id="input" placeholder="Username" [(ngModel)]="user.name" required>
+          <input type="text" id="input" placeholder="E-mail" [(ngModel)]="user.email" required>
+          <input type="password" id="input" placeholder="Password" [(ngModel)]="user.password" required>
+          <button type="submit" id="submit" (click)="storeUserDetails()"><strong>Sign Up</strong></button>
+      </form>
+    </div>
+  </div>
+<router-outlet></router-outlet>
