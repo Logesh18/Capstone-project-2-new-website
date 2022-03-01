@@ -1,4 +1,4 @@
-import { HostListener, NgModule } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule, route } from './app-routing.module';
 import { AppComponent } from './app.component';
