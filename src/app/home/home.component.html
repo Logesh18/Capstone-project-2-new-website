@@ -1,7 +1,7 @@
 <div id="bodyContainer">
     <div id="headerContainer-1" *ngIf="show">    
         <div class="navbar">
-            <a (click)="home()"><b><span id="title">24x7 NEWS</span></b></a>
+            <a (click)="home()"><strong><span id="title">24x7 NEWS</span></strong></a>
             <a (click)="headlines()">Headlines</a>
             <a (click)="covid()">Covid-19</a>
             <a (click)="india()">India</a>
@@ -25,10 +25,10 @@
     <div id="headerContainer-2" *ngIf="!show">    
         <div class="sidebar">
             <a id="menu" (click)="sidebar()"><fa-icon [icon]="menu"></fa-icon></a>
-            <a id="menu" (click)="home()"><b><span id="title-1">24x7 NEWS</span></b></a>
+            <a id="menu" (click)="home()"><strong><span id="title-1">24x7 NEWS</span></strong></a>
             <div *ngIf="sidenavbar" class="sidenav">
                 <a id=close (click)="close()"><fa-icon id="closemenu" [icon]="closemenu"></fa-icon></a>
-                <a id="home" (click)="home()"><b><span id="title-1">24x7 NEWS</span></b></a>
+                <a id="home" (click)="home()"><strong><span id="title-1">24x7 NEWS</span></strong></a>
 
                 <a id="search" (click)="searchData()"><fa-icon  [icon]="search"></fa-icon></a>
                 <input type="search" [(ngModel)]="searching" id="input-search" placeholder="Search..."/>
@@ -65,7 +65,7 @@
                             </div>    
                         </div>
                         <div id="title">
-                            <p><b>{{i.title}}</b><br></p>
+                            <p><strong>{{i.title}}</strong><br></p>
                         </div>
                         <div>
                             <p id="publish-date">Date:{{i.publishedAt}}</p>
