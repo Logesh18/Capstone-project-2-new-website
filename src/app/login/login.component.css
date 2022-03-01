@@ -52,6 +52,7 @@ h3{
     border-radius: 30px;
     outline:none;
     border: none;
+    font-weight:bold;
 }
 #submit:hover{
     transform: scale(1.02);
