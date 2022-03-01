@@ -1,4 +1,4 @@
-export interface newsDetail{
+export interface NewsDetail{
     id:number;
     content:string;
     description:string;
