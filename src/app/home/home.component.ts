@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit, HostListener } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { faBars, faCaretDown, faSearch, faSignOutAlt, faTimes } from '@fortawesome/free-solid-svg-icons';
-import { newsDetail } from '../newsdetail';
+import { NewsDetail } from '../newsdetail';
 import { NewsService } from '../services/news.service';
 
 @Component({
@@ -18,8 +18,8 @@ export class HomeComponent implements OnInit {
   closemenu=faTimes;
   c=0;
   i=0; 
-  detail:newsDetail[]=[];
-  data:newsDetail={
+  detail:NewsDetail[]=[];
+  data:NewsDetail={
     id:0,
     content:"",
     description:"",
