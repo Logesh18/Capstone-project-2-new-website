@@ -14,9 +14,6 @@ export class LoginComponent implements OnInit {
   value:any;
   token='';
   constructor(private router:Router) { }
-
-  ngOnInit(): void {
-  }
   login(){
     if(localStorage.getItem(this.data.name)){
         if(JSON.parse(''+localStorage.getItem(this.data.name)).name===this.data.name &&
