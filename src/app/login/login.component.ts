@@ -14,6 +14,15 @@ export class LoginComponent implements OnInit {
   value:any;
   token='';
   constructor(private router:Router) { }
+  
+  getRandomInt(min, max) {       
+    var byteArray = new Uint8Array(1);
+    window.crypto.getRandomValues(byteArray);
+    var randomNum = '0.' + byteArray[0].toString();
+    randomNum = Math.floor(randomNum * (max - min + 1)) + min;
+    return randomNum;
+  }
+  
   login(){
     if(localStorage.getItem(this.data.name)){
         if(JSON.parse(''+localStorage.getItem(this.data.name)).name===this.data.name &&
@@ -39,7 +48,7 @@ export class LoginComponent implements OnInit {
    var randomChars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
    var result = '';
    for ( var i = 0; i < 8; i++ ) {
-       result += randomChars.charAt(Math.floor(Math.random() * randomChars.length));
+       result += randomChars.charAt(getRandomInt(0, randomChars.length));
    }
    return result;
  }
