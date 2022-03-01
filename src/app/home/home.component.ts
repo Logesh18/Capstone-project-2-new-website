@@ -1,10 +1,10 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { faBars, faCaretDown, faSearch, faSignOutAlt, faTimes } from '@fortawesome/free-solid-svg-icons';
 import { newsDetail } from '../newsdetail';
 import { NewsService } from '../services/news.service';
-import { HostListener } from '@angular/core';
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
