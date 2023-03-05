@@ -63,8 +63,7 @@ export class HomeComponent implements OnInit {
                   image:obj.articles[this.i].urlToImage
                 }
                 this.detail.push(this.data);
-          } 
-          console.log(this.detail);   
+          }   
       }); 
   }
   getGeneralNews(){

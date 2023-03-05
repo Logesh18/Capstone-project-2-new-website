@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { User } from '../user';
 @Component({
@@ -6,7 +6,7 @@ import { User } from '../user';
   templateUrl: './signup.component.html',
   styleUrls: ['./signup.component.css']
 })
-export class SignupComponent implements OnInit {
+export class SignupComponent {
   user:User={
     name:"",
     email:"",
@@ -18,7 +18,6 @@ export class SignupComponent implements OnInit {
   storeUserDetails(){
     if(this.user.name.length!=0 || this.user.email.length!=0 || this.user.password.length!=0){
        localStorage.setItem(this.user.name,JSON.stringify(this.user));
-       console.log(localStorage.getItem(this.user.name));
        this.router.navigateByUrl('login');
      }
     else{
